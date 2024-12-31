@@ -1,27 +1,129 @@
-img {
-    width: 200px;
-}
 body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    color: #37474f;
     text-align: center;
-    font-family: 'Calibri';
-    background: aliceblue;
-    color: black;
-    overflow: hidden; /* Prevent scrollbars from appearing during animation */
-    position: relative;
+    background-image: url('https://wallpaperaccess.com/full/1994888.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
+
+.winter-container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #1e88e5;
+    margin-bottom: 10px;
+    animation: fadeIn 2s;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    animation: fadeIn 2.5s;
+}
+
+.images img {
+    width: 120px;
+    margin: 10px;
+    border: 2px solid #1e88e5;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.images img:hover {
+    transform: scale(1.2);
+}
+
+h3 {
+    font-size: 2rem;
+    color: #ff7043;
+    margin-top: 20px;
+    animation: fadeIn 3s;
+}
+
+.activities {
+    list-style: none;
+    padding: 0;
+    animation: fadeIn 3.5s;
+}
+
+.activities li {
+    font-size: 1.5rem;
+    margin: 5px 0;
+    color: #37474f;
+    text-shadow: 1px 1px 2px #ffffff;
+}
+
+.snowflakes {
+    position: relative;
+    margin-top: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+
 .snowflake {
     position: absolute;
-    top: -50px;
-    font-size: 20rem;
-    color: black;
-    opacity: 0.8;
-    animation: fall 5s linear infinite;
+    animation: fall 5s infinite linear;
+    font-size: 2rem;
+    color: #ffffff;
 }
+
 @keyframes fall {
     0% {
-        transform: translateY(0) translateX(0);
+        top: -50px;
     }
     100% {
-        transform: translateY(100vh);
+        top: 100%;
+    }
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(4) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.snowflake:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+.footer {
+    padding: 10px;
+    background: rgba(30, 136, 229, 0.8);
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
