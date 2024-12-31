@@ -2,12 +2,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #e0f7fa;
     color: #37474f;
     text-align: center;
-    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/033/093/579/small_2x/cute-knitted-snowmen-in-the-snow-christmas-background-ai-generated-photo.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+
+    /* Background gradient animation */
+    background: linear-gradient(45deg, #87ceeb, #f0f8ff);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .winter-container {
@@ -73,16 +86,21 @@ h3 {
 .snowflake {
     position: absolute;
     animation: fall 5s infinite linear;
-    font-size: 2rem;
-    color: #ffffff;
+    font-size: calc(1rem + 2vw); /* Variable snowflake sizes */
+    color: rgba(255, 255, 255, 0.9);
 }
 
 @keyframes fall {
     0% {
         top: -50px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
     }
     100% {
         top: 100%;
+        opacity: 0.5;
     }
 }
 
