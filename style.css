@@ -4,8 +4,6 @@ body {
     font-family: Arial, sans-serif;
     color: #37474f;
     text-align: center;
-
-    /* Background gradient animation */
     background: linear-gradient(45deg, #87ceeb, #f0f8ff);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
@@ -21,6 +19,13 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 .winter-container {
@@ -76,6 +81,12 @@ h3 {
     text-shadow: 1px 1px 2px #ffffff;
 }
 
+.activities li:hover {
+    color: #ff7043;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
 .snowflakes {
     position: relative;
     margin-top: 20px;
@@ -86,7 +97,7 @@ h3 {
 .snowflake {
     position: absolute;
     animation: fall 5s infinite linear;
-    font-size: calc(1rem + 2vw); /* Variable snowflake sizes */
+    font-size: calc(1rem + 2vw);
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -129,6 +140,54 @@ h3 {
     animation-delay: 4s;
 }
 
+.snowflake:nth-child(6) {
+    left: 60%;
+    animation-delay: 5s;
+}
+
+.snowflake:nth-child(7) {
+    left: 80%;
+    animation-delay: 6s;
+}
+
+.iceberg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: icebergMove 8s infinite;
+}
+
+.iceberg img {
+    width: 150px;
+    height: auto;
+}
+
+@keyframes icebergMove {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.quote-container {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+.quote-container h2 {
+    font-size: 1.8rem;
+    color: #37474f;
+    font-style: italic;
+}
+
 .footer {
     padding: 10px;
     background: rgba(30, 136, 229, 0.8);
@@ -144,4 +203,22 @@ h3 {
     100% {
         opacity: 1;
     }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff7043;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #1e88e5;
 }
